@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fire Max Custom Room Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+  <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
+    <h1 class="text-2xl font-bold text-center mb-4">FF Max Custom Room Panel</h1>
+    <form id="featureForm" class="space-y-4">
+      <div>
+        <label class="flex items-center">
+          <input type="checkbox" id="headshotLock" class="mr-2"> 100% Headshot Lock
+        </label>
+      </div>
+      <div>
+        <label class="flex items-center">
+          <input type="checkbox" id="noRecoil" class="mr-2"> No Recoil
+        </label>
+      </div>
+      <div>
+        <label class="flex items-center">
+          <input type="checkbox" id="obUpdate" class="mr-2"> Latest OB Update Features
+        </label>
+      </div>
+      <button type="button" onclick="applySettings()" class="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition">Apply Settings</button>
+    </form>
+    <div id="statusMessage" class="mt-4 text-center text-green-600 font-medium"></div>
+  </div>
+
+  <script>
+    function applySettings() {
+      const headshot = document.getElementById('headshotLock').checked;
+      const noRecoil = document.getElementById('noRecoil').checked;
+      const obUpdate = document.getElementById('obUpdate').checked;
+      
+      let message = 'Settings Applied:\n';
+      message += headshot ? '- 100% Headshot Lock\n' : '';
+      message += noRecoil ? '- No Recoil\n' : '';
+      message += obUpdate ? '- Latest OB Update Features\n' : '';
+      
+      if (!headshot && !noRecoil && !obUpdate) {
+        message = 'Please select at least one feature.';
+      }
+
+      document.getElementById('statusMessage').innerText = message;
+    }
+  </script>
+</body>
+</html>
