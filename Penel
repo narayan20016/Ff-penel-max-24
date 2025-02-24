@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FF Max Custom Room Panel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Free Fire Max Custom Room Panel</h1>
+
+  <div class="feature">
+    <label><input type="checkbox" id="headshotLock"> 100% Headshot Lock</label>
+  </div>
+  
+  <div class="feature">
+    <label><input type="checkbox" id="noRecoil"> No Recoil</label>
+  </div>
+  
+  <div class="feature">
+    <label><input type="checkbox" id="obUpdate"> Latest OB Update Features</label>
+  </div>
+
+  <button onclick="activateFeatures()">Activate Features</button>
+
+  <p id="status"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
